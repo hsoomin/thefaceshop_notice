@@ -25,8 +25,44 @@ $.ajax({
     url:'./data/notice.json',
     dataType:'JSON',
     success:function(data){
-        console.log(data)
+        //console.log(data)
+
+
+        $.each(data.공지사항,function(idx,obj){
+            a[idx]=[]; //전체 공지사항을 불러오는데 (0,1,2~): a의 인덱스값을 배열로 받아오기  "2차 배열 선언"
+            if(obj.구분=='쇼핑'){
+                imgName="<img src='./img/icon_notice1.gif' alt=''>"
+            }else{
+                imgName="<img src='./img/icon_notice2.gif' alt=''>"
+            }
+
+            a[idx][0]=idx+1;  //순번
+            a[idx][1]=imgName;  //==obj.구분;
+            a[idx][2]=obj.제목;
+            a[idx][3]=obj.날짜;
+
+            if(obj.구분=='쇼핑'){
+                n++;
+                b[n]=[]; //==0
+                b[n][0]=n+1; //123으로 만든거
+                b[n][1]=imgName; 
+                b[n][2]=obj.제목;
+                b[n][3]=obj.날짜;
+            }
+            if(obj.구분=='브랜드'){
+                m++;
+                c[m]=[]; 
+                c[m][0]=n+1; 
+                c[m][1]=imgName; 
+                c[m][2]=obj.제목;
+                c[m][3]=obj.날짜;
+            }
+        })
+        $('.noticeBt').each(function(index){
+            $(this).on({click:function(){  //노티스비티 3개중에 하나를 클릭하면
+                $('.noticeBt').removeClass('addNav');
+                $(this).addClass('addNav');
+            }})  
+        });
     }
-
-
 })
