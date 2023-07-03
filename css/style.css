@@ -101,13 +101,18 @@
 #notice > div .notice-board .notice-page ul {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 #notice > div .notice-board .notice-page ul li div.pagePrev {
   width: 27px;
   height: 21px;
 }
+#notice > div .notice-board .notice-page ul li div.pagePrev img {
+  vertical-align: middle;
+}
 #notice > div .notice-board .notice-page ul li div.page-number {
   padding: 2.5px 0;
+  margin-top: 2px;
 }
 #notice > div .notice-board .notice-page ul li div.page-number > span {
   display: inline-block;
@@ -120,9 +125,19 @@
 #notice > div .notice-board .notice-page ul li div.page-number > span a:hover {
   color: #b88857;
 }
+#notice > div .notice-board .notice-page ul li div.page-number > span a.addPage {
+  background-color: #1FB491;
+  color: #fff;
+  width: 20px;
+  padding: 0px 3px;
+  text-align: center;
+}
 #notice > div .notice-board .notice-page ul li div.pageNext {
   width: 27px;
   height: 21px;
+}
+#notice > div .notice-board .notice-page ul li div.pageNext img {
+  vertical-align: middle;
 }
 #notice > div .notice-board .notice-search {
   background: #f8f8f8;
@@ -147,7 +162,7 @@
   width: auto;
   line-height: 33px;
   text-align: left;
-  border: 1px solid #b68957;
+  border: 1px solid #75af02;
   text-indent: 15px;
 }
 #notice > div .notice-board .notice-search > div .search-left .search-list {
@@ -158,7 +173,8 @@
   width: 253px;
   height: 33px;
   padding: 0 33px 0 12px;
-  border: 1px solid #b68957;
+  margin-left: 5px;
+  border: 1px solid #54b293;
   background: url(../img/btn_search_5.png) no-repeat 100% 50%;
 }
 #notice > div .notice-board .notice-search > div .search-right input {
